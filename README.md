@@ -56,20 +56,43 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 ```
 
-7. Run migrations
+7. Create database
 ```bash
-php artisan migrate
+# Login to MySQL
+mysql -u root -p
+
+# Create database
+CREATE DATABASE your_database;
 ```
 
-8. Start the development server
+8. Run migrations and seeders
+```bash
+# Run migrations
+php artisan migrate
+
+# Run seeders to populate initial data
+php artisan db:seed
+```
+
+9. Start the development server
 ```bash
 php artisan serve
 ```
 
-9. In a separate terminal, start Vite
+10. In a separate terminal, start Vite
 ```bash
 npm run dev
 ```
+
+## Database Structure
+
+The application uses the following main tables:
+
+- `users`: User accounts and authentication
+- `posts`: News articles
+- `categories`: Article categories
+- `comments`: User comments on articles
+- `activities`: User activity logs
 
 ## Usage
 
